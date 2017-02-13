@@ -1,0 +1,39 @@
+.control-drag{
+    padding: 5px;
+	background-color: #fff;
+	text-align: center;
+    text-decoration: none;
+    color: black;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 18px;
+    .lock_tooltip{
+    	position: absolute;
+    	font-size: 14px;
+    	left: -145px;
+    	top: 0;
+    	padding: 4px;
+    	background-color: #fff;
+    	width: 135px;
+    	border: 1px solid #ccc;
+    	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+	    border-radius: 4px;
+	    opacity: 0;
+	    -webkit-transition: all 0.5s ease;
+		-moz-transition: all 0.5s ease;
+		-o-transition: all 0.5s ease;
+		transition: all 0.5s ease;
+    }
+    &:hover{
+    	.lock_tooltip {
+    		opacity: 1;
+    	}
+    }
+}
+
+.control-drag.dissable{
+	cursor: default;
+    background-color: #f4f4f4;
+    color: #bbb;
+}
+

@@ -1,0 +1,26 @@
+/* Import Libs */
+/*@import url(libs/bootstrap.min.css);*/
+/* Import Font */
+// @import "http://fonts.googleapis.com/css?family=Droid+Sans";
+
+/* make main container fixes */
+body {
+	font-family: 'Droid Sans', sans-serif;
+}
+
+@import "navbar.css";
+@import "header.css";
+@import "slider.css";
+@import "footer.css";
+@import "protein_select.css";
+
+@import "modal.css";
+@import "loader.css";
+@import "annotations.css";
+
+/*Charts*/
+@import "chart/main-chart.css";
+@import "chart/exon.css";
+@import "chart/domain.css";
+@import "chart/variation.css";
+

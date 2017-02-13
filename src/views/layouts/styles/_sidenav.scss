@@ -1,0 +1,219 @@
+/* Toggle Styles */
+$width: 100px;
+$font-size: 12px;
+$page-content-padding: 10px 5px 10px 5px;
+
+/*!
+ * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com/template-overviews/simple-sidebar/)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+#wrapper {
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+  padding-left: $width;
+}
+
+#sidebar-wrapper {
+  z-index: 1000;
+  top: $header-height;
+  position: fixed;
+  left: $width;
+  width: 0;
+  height: 100%;
+  margin-left: -$width;
+  overflow-y: auto;
+  background: $sidebar-black;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  width: $width;
+}
+
+#page-content-wrapper {
+  width: 100%;
+  position: absolute;
+  padding: $page-content-padding;
+  overflow: hidden;
+}
+
+#wrapper.toggled #page-content-wrapper {
+  position: absolute;
+  margin-right: -$width;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: $width;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: 100%;
+  li {
+    line-height: 24px;
+    height: $width;
+    text-align: center;
+    padding: 20px 0;
+    width: 100px;
+    -webkit-transition: background 0.3s ease;
+    -moz-transition: background 0.3s ease;
+    -o-transition: background 0.3s ease;
+    transition: background 0.3s ease;
+    &.data_export{
+      display: none;
+      position: absolute;
+      bottom: 60px;
+    }
+    &.lighting:hover {
+        border-left: 2px $lighting-color solid;
+    }
+
+    &.home:hover {
+        border-left: 2px $stadium-red solid;
+    }
+
+    &.parking:hover {
+      border-left: 2px $parking-color solid;
+    }
+
+    &.restroom:hover {
+      border-left: 2px $lighter-blue solid;
+    }
+
+    &.hvac:hover {
+      border-left: 2px $hvac-color solid;
+    }
+    
+    &.selected{
+      width: $width;
+      // padding: 10px 2px 10px 0;
+
+      &.lighting {
+        border-left: 2px $lighting-color solid;
+      }
+
+      &.parking {
+        border-left: 2px $parking-color solid;
+      }
+
+      &.restroom {
+        border-left: 2px $lighter-blue solid;
+      }
+
+      &.hvac {
+        border-left: 2px $hvac-color solid;
+      }
+
+      &.home {
+        border-left: 2px $stadium-red solid;
+      }
+      
+      i {
+        color: $stadium-white;
+        font-size: 30px;
+        opacity: 1;
+      }
+
+      img{
+        opacity: 1;
+      }
+
+      a {
+        color: $stadium-white;
+      }
+
+      background-color: lighten($sidebar-black, 8%);
+    }
+
+    i {
+      color: $stadium-white;
+      font-size: 30px;
+      opacity: 0.5;
+    }
+
+    img {
+      display: block;
+      margin: auto;
+      opacity: 0.5;
+    }
+
+  }
+}
+
+.sidebar-nav li a {
+  display: block;
+  text-decoration: none;
+  color: #999999;
+}
+
+.sidebar-nav li:hover {
+  text-decoration: none;
+  cursor: pointer;
+  width: $width;
+  // padding: 20px 2px 20px 0;
+//  border-left: 2px $stadium-red solid;
+  background: lighten($sidebar-black, 8%);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  font-size: 18px;
+  line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+  color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+@media(min-width:768px) {
+  #wrapper {
+    padding-left: $width;
+  }
+
+  #wrapper.toggled {
+    padding-left: 0;
+  }
+
+  #sidebar-wrapper {
+    width: $width;
+    font-size: $font-size;
+    overflow: hidden;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    width: 0;
+  }
+
+  #page-content-wrapper {
+    padding: $page-content-padding;
+    position: relative;
+  }
+
+  #wrapper.toggled #page-content-wrapper {
+    position: relative;
+    margin-right: 0;
+  }
+}

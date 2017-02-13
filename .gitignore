@@ -1,0 +1,10 @@
+.DS_Store
+.idea
+README.html
+node_modules
+npm-debug.log
+test-report.xml
+docker-build.out
+static
+dist
+.docker
