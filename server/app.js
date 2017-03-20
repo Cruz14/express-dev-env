@@ -39,25 +39,7 @@ app.use(helmet.frameguard({ action: 'deny' }));
 app.use('/static', express.static(path.join(__dirname, 'static')));
 
 app.get('*', (req, res) => {
-  const html = `<html>
-    <head>
-      <title>Vizport</title>
-      <meta charset="utf-8">
-      <meta name="description" content="">
-      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-      <link href='${process.env.NODE_ENV === 'production' ? '/' : '/'}static/style.css' rel='stylesheet' type='text/css'>
-    </head>
-    <body>
-      <div id="app"></div>
-      <script type="text/javascript" 
-        src="${process.env.NODE_ENV === 'production' ? '/' : '/'}static/vendors.js">
-      </script>
-      <script type="text/javascript" 
-        src="${process.env.NODE_ENV === 'production' ? '/' : '/'}static/app.js">
-      </script>
-    </body>
-    </html>`;
-  res.send(html);
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // catch 404 and forward to error handler

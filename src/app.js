@@ -1,14 +1,3 @@
-import $ from 'jquery';
+import * as d3 from 'd3';
 
-const container = document.getElementById('app');
-
-const request = $.ajax({
-  type: 'GET',
-  url: '/api/query',
-});
-
-request.success(result => {
-  console.log(result);
-  // container.innerHTML = result.response.language;
-});
-
+console.log(`running d3 v${d3.version}`);
